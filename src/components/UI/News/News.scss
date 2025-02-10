@@ -1,0 +1,73 @@
+.news {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  font-family: "Advent Pro", serif;
+  &__wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__bottom {
+    background: linear-gradient(rgba(0, 0, 0, 0.253), rgba(0, 0, 0, 0.262)),
+      url(../../../assets/newsbg.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100% !important;
+    height: 400px;
+    background-position-y: 50%;
+    border-radius: 25px;
+    color: #fff;
+  }
+  .swiper-pagination {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    width: 100px !important;
+    border-radius: 99px;
+    position: absolute;
+    left: 46% !important;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+  &__date {
+    display: flex;
+    justify-content: end;
+  }
+  &__date p {
+    background-color: #ffffff58;
+    padding: 10px 16px;
+    border-radius: 99px;
+  }
+  &__slide {
+    padding: 30px;
+  }
+  &__cardtitle {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 80%;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-radius: 99px;
+    border: 0;
+    color: #fff;
+    background-color: #1877f2;
+    gap: 10px;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -1,0 +1,68 @@
+.footer {
+  font-family: "Advent Pro", serif;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  background-color: #1877f2;
+  padding: 30px 50px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-top: 80px;
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  &__social {
+    display: flex;
+    gap: 25px;
+  }
+  &__icon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  &__text {
+    color: #fff;
+    width: 300px;
+  }
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+  }
+  &__link {
+    color: #fff;
+    font-weight: 500;
+    display: block;
+  }
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+  }
+  &__card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__bottom {
+    color: #fff;
+  }
+}
