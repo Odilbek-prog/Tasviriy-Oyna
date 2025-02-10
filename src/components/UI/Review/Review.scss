@@ -23,7 +23,7 @@
     justify-content: space-between;
   }
   &__card {
-    width: 300px !important;
+    width: 300px;
     height: 100%;
     background: url(../../../assets/reviewbg.jpeg);
     background-size: cover;
@@ -47,9 +47,28 @@
     gap: 10px;
   }
   &__words {
-    width: 100%;
+    color: #1877f2;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 73%;
     border: 1px solid #ebe7e7;
     border-radius: 25px;
     padding: 50px 54px;
+  }
+  &__cardticks2 {
+    display: flex;
+    justify-content: flex-end;
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+  }
+  &__cardtext {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  &__text {
+    width: 400px;
   }
 }

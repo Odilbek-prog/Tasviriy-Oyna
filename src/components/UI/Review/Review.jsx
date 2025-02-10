@@ -66,14 +66,20 @@ const Review = () => {
               </div>
             </div>
             <div className="review__words">
-              .review
-              <p className="review__text">
-                Tasviriy san’at va dizayn sohasida innovatsion yechimlar, yuqori
-                sifatli xizmatlar va ijodiy qo‘llab-quvvatlashni taqdim etamiz.
-                Bizning jamoamiz sizning tasviriy ijodiyatingizni yangi
-                bosqichga olib chiqishga tayyor.
-              </p>
-              <img src={ticks} alt="" className="review__ticks" />
+              <div className="review__cardticks">
+                <img src={ticks} alt="" className="review__ticks" />
+              </div>
+              <div className="review__cardtext">
+                <p className="review__text">
+                  Tasviriy san’at va dizayn sohasida innovatsion yechimlar,
+                  yuqori sifatli xizmatlar va ijodiy qo‘llab-quvvatlashni taqdim
+                  etamiz. Bizning jamoamiz sizning tasviriy ijodiyatingizni
+                  yangi bosqichga olib chiqishga tayyor.
+                </p>
+              </div>
+              <div className="review__cardticks2">
+                <img src={ticks} alt="" className="review__ticks" />
+              </div>
             </div>
           </SwiperSlide>
           <SwiperSlide className="review__slide">
