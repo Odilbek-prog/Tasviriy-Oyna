@@ -48,7 +48,7 @@
   }
   &__words {
     color: #1877f2;
-    font-size: 18px;
+    font-size: 19px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -56,6 +56,7 @@
     border: 1px solid #ebe7e7;
     border-radius: 25px;
     padding: 50px 54px;
+    font-weight: 600;
   }
   &__cardticks2 {
     display: flex;
@@ -69,6 +70,39 @@
     text-align: center;
   }
   &__text {
-    width: 400px;
+    width: 450px;
+  }
+}
+@media only screen and (max-width: 895px) {
+  .review {
+    &__text {
+      width: 300px;
+    }
+    &__card {
+      margin-left: 5px;
+    }
+    &__slide {
+      gap: 10px;
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .review {
+    &__swiper {
+      height: auto;
+    }
+    &__slide {
+      flex-direction: column;
+      height: auto;
+    }
+    &__card {
+      width: 100%;
+      height: 400px;
+      background-position-y: 30%;
+      margin-left: 0;
+    }
+    &__words {
+      width: 100%;
+    }
   }
 }

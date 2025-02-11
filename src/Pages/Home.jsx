@@ -4,6 +4,8 @@ import News from "../components/UI/News/News";
 import Team from "../components/UI/Team/Team";
 import Portfolio from "../components/UI/Portfolio/Portfolio";
 import Review from "../components/UI/Review/Review";
+import Faq from "../components/UI/Faq/Faq";
+import Contact from "../components/UI/Contact/Contact";
 
 const Home = () => {
   return (
@@ -13,6 +15,8 @@ const Home = () => {
       <Team />
       <Portfolio />
       <Review />
+      <Faq />
+      <Contact />
     </div>
   );
 };

@@ -1,28 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 
-const fixed = document.getElementsByClassName("fixed");
-
 const Navbar = () => {
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 0) {
-      fixed[0].classList.add("fixed__active");
-    } else {
-      fixed[0].classList.remove("fixed__active");
-    }
-  });
-  function clickSingleA(a) {
-    items = document.querySelectorAll(".single.active");
+  const [isOpen, setIsOpen] = useState(false);
 
-    if (items.length) {
-      items[0].className = "single";
-    }
+  // Menyuni ochish/yopish funksiyasi
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-    a.className = "single active";
-  }
+  // Skroll qilish hodisasini kuzatish
+  useEffect(() => {
+    const fixed = document.getElementsByClassName("navbar")[0];
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        fixed.classList.add("fixed__active");
+      } else {
+        fixed.classList.remove("fixed__active");
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+
+    // Komponent unmount bo'lganida event listenerni tozalash
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="navbar fixed">
+    <nav className={`navbar ${isOpen ? "menu-open" : ""}`}>
       <div className="navbar__wrapper">
         <svg
           width="255"
@@ -48,29 +53,65 @@ const Navbar = () => {
             fill="#1877F2"
           />
         </svg>
-        <ul className="navbar__menu">
-          <li className="navbar__list">
-            <NavLink to="/" className="navbar__link">
-              Asosiy
-            </NavLink>
-          </li>
-          <li className="navbar__list">
-            <NavLink to="/news" className="navbar__link">
-              Kun Yangiliklari
-            </NavLink>
-          </li>
-          <li className="navbar__list">
-            <NavLink to="/about" className="navbar__link">
-              Biz Haqimizda
-            </NavLink>
-          </li>
-          <li className="navbar__list">
-            <NavLink to="/portfolio" className="navbar__link">
-              Portfolio
-            </NavLink>
-          </li>
-        </ul>
-        <button className="navbar__btn">Bog’lanish</button>
+        <div className={`navbar__menu ${isOpen ? "navbar__menu--open" : ""}`}>
+          <ul className="navbar__list">
+            <li className="navbar__item">
+              <NavLink
+                to="/"
+                className="navbar__link"
+                onClick={() => setIsOpen(false)}
+              >
+                Asosiy
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink
+                to="/news"
+                className="navbar__link"
+                onClick={() => setIsOpen(false)}
+              >
+                Kun Yangiliklari
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink
+                to="/about"
+                className="navbar__link"
+                onClick={() => setIsOpen(false)}
+              >
+                Biz Haqimizda
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <NavLink
+                to="/portfolio"
+                className="navbar__link"
+                onClick={() => setIsOpen(false)}
+              >
+                Portfolio
+              </NavLink>
+            </li>
+            <li className="navbar__item">
+              <a
+                href="/#contact"
+                className="navbar__btn"
+                onClick={() => setIsOpen(false)}
+              >
+                Bog’lanish
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div
+          className={`navbar__burger ${isOpen ? "open" : ""}`}
+          onClick={toggleMenu}
+          aria-label="Navigatsiyani almashtirish"
+          aria-expanded={isOpen}
+        >
+          <span className="burger__line"></span>
+          <span className="burger__line"></span>
+          <span className="burger__line"></span>
+        </div>
       </div>
     </nav>
   );

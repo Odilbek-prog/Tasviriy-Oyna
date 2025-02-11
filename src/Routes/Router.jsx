@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import About from "../Pages/About";
 import News from "../Pages/News";
-import Portfolio from "../Pages/Portfolio";
+import PortfolioPage from "../Pages/PortfolioPage";
 import Home from "../Pages/Home";
 
 const Router = () => {
@@ -11,7 +11,7 @@ const Router = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/news" element={<News />} />
-      <Route path="/portfolio" element={<Portfolio />} />
+      <Route path="/portfolio" element={<PortfolioPage />} />
     </Routes>
   );
 };

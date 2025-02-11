@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import intro1 from "../../../assets/intro1.png";
 import intro2 from "../../../assets/intro2.jpeg";
 import intro3 from "../../../assets/intro3.png";
-
 const Intro = () => {
   var settings = {
     dots: false,
@@ -15,32 +14,6 @@ const Intro = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
   return (
     <div className="intro">
@@ -78,5 +51,4 @@ const Intro = () => {
     </div>
   );
 };
-
 export default Intro;
