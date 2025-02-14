@@ -1,18 +1,21 @@
-import React from "react";
+import React, { Suspense } from "react";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import About from "../Pages/About";
-import News from "../Pages/News";
-import PortfolioPage from "../Pages/PortfolioPage";
-import Home from "../Pages/Home";
 
 const Router = () => {
+  const Home = lazy(() => import("../Pages/Home"));
+  const About = lazy(() => import("../Pages/About"));
+  const News = lazy(() => import("../Pages/News"));
+  const PortfolioPage = lazy(() => import("../Pages/PortfolioPage"));
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/news" element={<News />} />
-      <Route path="/portfolio" element={<PortfolioPage />} />
-    </Routes>
+    <Suspense fallback={<div class="loader" />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/news" element={<News />} />
+        <Route path="/portfolio" element={<PortfolioPage />} />
+      </Routes>
+    </Suspense>
   );
 };
 
